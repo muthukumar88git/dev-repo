@@ -26,6 +26,15 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 <manifest>
 <mainClass>com.demo.App</mainClass>
 </manifest>
+  <dependencies>
+
+<dependency>
+<groupId>io.micrometer</groupId>
+<artifactId>micrometer-registry-prometheus</artifactId>
+<version>1.13.0</version>
+</dependency>
+
+</dependencies>
 </archive>
 </configuration>
 
