@@ -2,13 +2,32 @@ version: "3.8"
 
 services:
 
-  devops-app:
-    image: devops-app:v1
-    container_name: devops-app
-    ports:
-      - "8081:8080"
-    networks:
-      - devops-net
+
+ devops-app:
+   image: devops-app:v1
+   container_name: devops-app
+   ports:
+    - "8080:8080"
+   networks:
+    - devops-net
+
+
+ prometheus:
+
+   image: prom/prometheus
+
+   container_name: prometheus
+
+   ports:
+    - "9090:9090"
+
+   volumes:
+    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+
+   networks:
+    - devops-net
+
 
 networks:
-  devops-net:
+
+ devops-net:
