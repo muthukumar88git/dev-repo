@@ -41,7 +41,7 @@ docker rm -f devops-app || true
 
 docker run -d \
 --name devops-app \
--p 8080:8080 \
+-p 8081:8081 \
 devops-app
 
 """
