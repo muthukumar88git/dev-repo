@@ -38,19 +38,17 @@ docker build \
 }
 
 
-stage('Deploy'){
-steps{
+stage('Deploy') {
 
-sh """
+steps {
 
-docker rm -f devops-app || true
+sh '''
 
-docker run -d \
---name devops-app \
--p 8081:8080 \
-devops-app
+docker compose down || true
 
-"""
+docker compose up -d
+
+'''
 
 }
 
